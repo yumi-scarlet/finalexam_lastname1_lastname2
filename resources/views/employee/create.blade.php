@@ -23,7 +23,8 @@
                 <div class="card-header">
                   <h3 class="card-title">Add new employee</h3>
                 </div>
-                <form>
+                <form action="{{ route('employee.store') }}" method="POST">
+                    @csrf
                     <div class="row card-body col-12">
                         <div class="form-group col-6">
                           <label for="exampleInputPassword1">Firstname</label>
@@ -58,6 +59,7 @@
                         <button type="submit" class="btn btn-success col-6 m-auto">Submit Student Record</button>
                       </div>
                     </div>
+                  @csrf
                 </form>
                 <!-- /.card-body -->
               </div>

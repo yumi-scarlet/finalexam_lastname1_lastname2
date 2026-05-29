@@ -16,14 +16,13 @@
     <!-- Main content -->
     <div class="content">
         <div class="container-fluid">
-            <a href="#" class="btn btn-info">Add New Employee</a> <br> <br>
+            <a href="{{ route('students.create') }}" class="btn btn-info">Add New Employee</a> <br> <br>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body p-0">
                                 <table class="table">
                                     <thead>
-                                        @foreach ($employees as $items)
                                         <tr>
                                             <th>ID</th>
                                             <th>First Name</th>
@@ -34,7 +33,8 @@
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody  >
+                                    <tbody>
+                                        @foreach ($employee as $items)
                                         <tr>
                                             <td>{{ $items->id }}</td>
                                             <td>{{ $items->fname }}</td>
@@ -44,9 +44,13 @@
                                             <td>{{ $items->dob }}</td>
                                             <td> 
                                                 <a href="#" class="btn btn-primary btn-md active" role="button" aria-pressed="true">Edit</a>
+                                                <form action="{{ route('students.destroy', $student->id) }}" method="POST" style="display:inline;">
+                                                    @csrf
+                                                    @method('DELETE')
                                                 <a href="#" class="btn btn-danger btn-md active" role="button" aria-pressed="true">Delete</a>
                                             </td>
                                         </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

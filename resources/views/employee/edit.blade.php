@@ -23,7 +23,9 @@
               <div class="card-header">
                 <h3 class="card-title">Edit Employee Information</h3>
               </div>
-              <form>
+              <form action="{{ route('employee.update', $employees->id) }}" method="POST">
+                @csrf
+                @method('PUT')
                 <div class="row card-body col-12">
                   <div class="form-group col-12">
                     <label
@@ -63,5 +65,6 @@
                   <button type="submit" class="btn btn-success col-12">Update Student Record</button>
                 </div>
               </form>
+            @csrf
       
 @endsection
