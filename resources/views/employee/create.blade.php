@@ -26,28 +26,34 @@
                 <form>
                     <div class="row card-body col-12">
                         <div class="form-group col-6">
-                          <label for="exampleInputPassword1">Lastname</label>
-                          <input type="text" class="form-control g-2" id="lname" name="lname" placeholder="Enter your Lastname" require>
+                          <label for="exampleInputPassword1">Firstname</label>
+                          <input type="text" class="form-control g-2" id="fname" name="fname" placeholder="Enter your Firstname" require>
+                          @error('fname') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                         <div class="form-group col-6">
                           <label for="exampleInputPassword1">Middlename</label>
                           <input type="text" class="form-control g-2" id="midname" name="mname" placeholder="Enter your Middlename" require>
+                          @error('midname') <span class="text-danger">{{$message}}</span> @enderror
                         </div> 
                         <div class="form-group col-12">
-                          <label for="exampleInputPassword1">FirstName</label>
-                          <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter your First Name">
+                          <label for="exampleInputPassword1">Lastname</label>
+                          <input type="text" class="form-control" id="lname" name="lname" placeholder="Enter your Lastname">
+                          @error('lname') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                         <div class="form-group col-12">
                           <label for="exampleInputPassword1">Address</label>
                           <input type="text" class="form-control" id="address" name="address" placeholder="House No. Street Name, Brgy, City">
+                          @error('address') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                         <div class="form-group col-6">
                           <label for="exampleInputPassword1">Date of Birth</label>
                           <input type="date" class="form-control" id="dob" name="dob" placeholder="YYYY-MM-DD"> <br>
+                          @error('dob') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                         <div class="form-group col-6">
                           <label for="exampleInputPassword1">Contact No</label>
                           <input type="text" class="form-control" id="contact" name="contact" placeholder="Enter your Contact No">
+                          @error('contact') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                         <button type="submit" class="btn btn-success col-6 m-auto">Submit Student Record</button>
                       </div>

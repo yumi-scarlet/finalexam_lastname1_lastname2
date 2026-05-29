@@ -23,6 +23,7 @@
                             <div class="card-body p-0">
                                 <table class="table">
                                     <thead>
+                                        @foreach ($employees as $items)
                                         <tr>
                                             <th>ID</th>
                                             <th>First Name</th>
@@ -35,12 +36,12 @@
                                     </thead>
                                     <tbody  >
                                         <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td>{{ $items->id }}</td>
+                                            <td>{{ $items->fname }}</td>
+                                            <td>{{ $items->lname }}</td>
+                                            <td>{{ $items->midname }}</td>
+                                            <td>{{ $items->address }}</td>
+                                            <td>{{ $items->dob }}</td>
                                             <td> 
                                                 <a href="#" class="btn btn-primary btn-md active" role="button" aria-pressed="true">Edit</a>
                                                 <a href="#" class="btn btn-danger btn-md active" role="button" aria-pressed="true">Delete</a>
